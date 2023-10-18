@@ -22,10 +22,11 @@ export default class ManicTime extends Plugin {
 	getMetadata() {
 		const activeFile = this.app.workspace.getActiveFile();
 		
+		const adapter = this.app.vault.adapter as any;
 		if (activeFile) {
 			return {
 				fileName: activeFile.name,
-				filePath: path.join(activeFile.vault.adapter.basePath, activeFile.path)
+				filePath: path.join(adapter.basePath, activeFile.path)
 			};
 		}
 	}

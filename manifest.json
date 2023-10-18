@@ -1,0 +1,10 @@
+{
+	"id": "manictime",
+	"name": "ManicTime",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "This extension sends path of active file to locally installed ManicTime client",
+	"author": "Finkit d.o.o.",
+	"authorUrl": "https://www.manictime.com/",
+	"isDesktopOnly": true
+}

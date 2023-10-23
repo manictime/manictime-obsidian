@@ -11,10 +11,11 @@ export default class ManicTime extends Plugin {
 		statusBar.setText('ManicTime');
 		statusBar.addEventListener('click', this.onClick);
 
-		this.app.workspace.on('active-leaf-change', () => this.sendData());
-		this.app.workspace.on('file-open' , () =>this.sendData());
-		this.app.workspace.on('window-open', () =>this.sendData());
-		this.app.workspace.on('window-close',() => this.sendData());
+	
+		this.registerEvent(this.app.workspace.on('active-leaf-change', () => this.sendData()));
+		this.registerEvent(this.app.workspace.on('file-open' , () =>this.sendData()));
+		this.registerEvent(this.app.workspace.on('window-open', () =>this.sendData()));
+		this.registerEvent(this.app.workspace.on('window-close',() => this.sendData()));
 		
 		this.registerInterval(window.setInterval(() => this.sendData(), 5 * 60 * 1000));
 	}
